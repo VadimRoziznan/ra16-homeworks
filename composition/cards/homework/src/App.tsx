@@ -7,18 +7,18 @@ function App() {
   return (
     <div className="App">
       <Card 
-        image={ someImage } 
-        title="Card title" 
+        image={ someImage }
+        title="Card title"
         info="Some quick example text to build on the card title and make up the bulk of the card's content."/>
       <Card 
-        title="Card title" 
+        title="Card title"
         info="Some quick example text to build on the card title and make up the bulk of the card's content."/>
       <Card 
-        title="Card title" 
+        title="Card title"
         info="Some quick example text to build on the card title and make up the bulk of the card's content."/>
       <Card 
-        image={ someImage } 
-        title="Card title" 
+        image={ someImage }
+        title="Card title"
         info="Some quick example text to build on the card title and make up the bulk of the card's content."/>
     </div>
   );

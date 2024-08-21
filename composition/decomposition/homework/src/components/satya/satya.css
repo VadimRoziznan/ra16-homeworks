@@ -1,0 +1,54 @@
+.satya-container {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: start;
+  align-items: center;
+  margin: 20px 0 0 350px;
+}
+
+.satay-header {
+  display: block;
+  height: auto;
+  margin: 0 5px 0;
+  font-size: 14px;
+  font-weight: 600;
+
+}
+
+.satya-title {
+  font-size: 12px;
+}
+
+.satya-article {
+  font-size: 10px;
+  color: rgb(164, 174, 194);
+  margin: 0 0 0 5px;
+}
+
+.satay-img {
+  width: 15px;
+  height: 15px;
+  margin: 0 5px 0 0;
+}
+
+.left-indent {
+  margin-top: -15px;
+  margin-left: 145px;
+}
+
+.weather-info {
+  margin: 20px 0 0 10px;
+}
+
+.info-item{
+  font-size: 12px;
+  font-weight: 600;
+  margin: 0 0 0 20px;
+}
+
+.satya-title-one {
+  font-size: 12px;
+  margin: 0 0 0 20px;
+}

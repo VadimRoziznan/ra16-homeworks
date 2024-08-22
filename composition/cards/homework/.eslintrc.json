@@ -2,36 +2,53 @@
   "env": {
     "browser": true,
     "node": true,
-    "es6": true
+    "es6": true,
+    "jest": true
   },
   "parser": "@typescript-eslint/parser",
   "parserOptions": {
     "ecmaVersion": 2020,
-    "sourceType": "module"
+    "sourceType": "module",
+    "ecmaFeatures": {
+      "jsx": true,
+      "tsx": true // Добавлено для поддержки TSX
+    }
   },
-  "plugins": ["@typescript-eslint", "react"],
+  "plugins": ["@typescript-eslint", "react", "react-hooks"],
+  "extends": [
+    "plugin:@typescript-eslint/recommended",
+    "plugin:react/recommended",
+    "plugin:react-hooks/recommended"
+  ],
   "rules": {
-  // Правила для определения ошибок
-  "no-console": "off",
-  "no-debugger": "error",
-  "no-undef": "error",
-  "no-unused-vars": "error",
-  "no-unused-expressions": "error",
+    // Правила для определения ошибок
+    "no-console": "off",
+    "no-debugger": "error",
+    "no-undef": "off", // Выключено, так как TypeScript уже проверяет undefined
+    "no-unused-vars": "error",
+    "no-unused-expressions": "error",
 
-  // Правила для определения потенциальных проблем
-  "no-redeclare": "warn",
-  "no-unreachable": "warn",
-  "no-fallthrough": "warn",
-  "no-useless-escape": "warn",
-  "no-useless-catch": "warn",
+    // Правила для определения потенциальных проблем
+    "no-redeclare": "warn",
+    "no-unreachable": "warn",
+    "no-fallthrough": "warn",
+    "no-useless-escape": "warn",
+    "no-useless-catch": "warn",
 
-  // Правила для определения стиля кода
-  "no-multiple-empty-lines": "warn",
-  "no-trailing-spaces": "warn",
-  "indent": ["error", 2],
-  "quotes": ["error", "double"],
-  "semi": ["error", "always"],
-  "comma-dangle": ["error", "always-multiline"],
-  "no-mixed-spaces-and-tabs": "error"
+    // Правила для определения стиля кода
+    "no-multiple-empty-lines": "warn",
+    "no-trailing-spaces": "warn",
+    "indent": ["error", 2],
+    "quotes": ["error", "double"],
+    "semi": ["error", "always"],
+    "comma-dangle": ["error", "always-multiline"],
+    "no-mixed-spaces-and-tabs": "error",
+
+    // Дополнительные правила
+    "@typescript-eslint/explicit-function-return-type": "off", // Не требовать явного типа возвращаемого значения
+    "@typescript-eslint/no-explicit-any": "warn", // Предупреждать о неявном типе any
+    "react/prop-types": "warn", // Предупреждать о пропах без типов
+    "react-hooks/rules-of-hooks": "error", // Запрещать неправильное использование хуков
+    "react-hooks/exhaustive-deps": "warn" // Предупреждать о неиспользуемых зависимостях в хуках
   }
 }

@@ -4,7 +4,7 @@ import "./index.css";
 export interface ICardButton {
   href: string,
   title: string
-};
+}
 
 export const CardButton: React.FC<ICardButton> = (props) => {
   const { href, title} = props;

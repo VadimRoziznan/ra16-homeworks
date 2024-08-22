@@ -1,25 +1,36 @@
 import "./App.css";
 import { Card } from "./components/card";
+import React from "react";
 
-const someImage: string = "/default-image.png";
+const someImage = "/default-image.png";
 
 function App() {
   return (
     <div className="App">
-      <Card 
-        image={ someImage }
+      <Card
+        imgSrc={ someImage }
+        imgAlt="someImage"
         title="Card title"
-        info="Some quick example text to build on the card title and make up the bulk of the card's content."/>
-      <Card 
+        info="Some quick example text to build on the card title and make up the bulk of the card's content."
+        buttonHref="#"
+        buttonTitle="Go somewhere"/>
+      <Card
         title="Card title"
-        info="Some quick example text to build on the card title and make up the bulk of the card's content."/>
-      <Card 
+        info="Some quick example text to build on the card title and make up the bulk of the card's content."
+        buttonHref="#"
+        buttonTitle="Go somewhere"/>
+      <Card
         title="Card title"
-        info="Some quick example text to build on the card title and make up the bulk of the card's content."/>
-      <Card 
-        image={ someImage }
+        info="Some quick example text to build on the card title and make up the bulk of the card's content."
+        buttonHref="#"
+        buttonTitle="Go somewhere"/>
+      <Card
+        imgSrc={ someImage }
+        imgAlt="someImage"
         title="Card title"
-        info="Some quick example text to build on the card title and make up the bulk of the card's content."/>
+        info="Some quick example text to build on the card title and make up the bulk of the card's content."
+        buttonHref="#"
+        buttonTitle="Go somewhere"/>
     </div>
   );
 }

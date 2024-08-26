@@ -5,8 +5,8 @@
   flex-wrap: nowrap;
   justify-content: start;
   align-items: center;
-  margin: 25px 0 0 350px;
-  padding: 0 0 0 20px;
+  margin: 0 0 0 0;
+  padding: 0 0 0 0;
 }
 
 .new-item {
@@ -20,18 +20,18 @@
   flex-wrap: nowrap;
   justify-content: start;
   align-items: center;
-  margin: 25px 0 0 350px;
-  padding: 0 0 0 20px;
+  margin: 0 0 0 0;
+  padding: 0 0 0 0;
 }
 
 .articleTitle-title {
-  margin: 0 5px 0 0;
+  margin: 0 0 0 0;
   font-size: 16px;
   color: rgb(36, 87, 197);
 }
 
 .articleTitle-article {
-  margin: 0 5px 0 0;
+  margin: 0 0 0 0;
   font-size: 16px;
   color: rgb(106, 149, 241);
 }

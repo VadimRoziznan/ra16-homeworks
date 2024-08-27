@@ -1,10 +1,13 @@
 import React from "react";
+import { Image } from "../image";
+import { Title } from "../title";
+import { Info } from "../info";
 import { CardButton } from "../button";
 import "./index.css";
 
 export interface ICard {
-  imgSrc?: string,
-  imgAlt?: string
+  src?: string,
+  alt?: string,
   title: string,
   info: string,
   buttonHref: string,
@@ -12,16 +15,14 @@ export interface ICard {
 }
 
 export const Card: React.FC<ICard> = (props) => {
-  const { imgSrc, imgAlt,  title, info, buttonHref, buttonTitle } = props;
+  const { src, alt, title, info, buttonHref, buttonTitle } = props;
 
   return (
-    <div className="container">
-      {imgSrc ? (
-        <img src={imgSrc} alt={imgAlt} className="card-img" />
-      ) : null}
+    <div className="card">
+      <Image src={ src } alt={ alt }/>
       <div className="card-body">
-        <h5 className="card-title">{ title }</h5>
-        <p className="card-text">{ info }</p>
+        <Title title={ title }/>
+        <Info info={ info }/>
         <CardButton href={ buttonHref } title={ buttonTitle }/>
       </div>
     </div>

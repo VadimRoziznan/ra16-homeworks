@@ -1,4 +1,4 @@
-.container {
+.card {
   width: 350px;
   height: auto;
   margin: 10px;
@@ -7,11 +7,3 @@
   background: #ccc;
 }
 
-.card-title {
-  font-size: 20px;
-  margin: 15px auto;
-}
-
-.card-img {
-  width: 100%;
-}

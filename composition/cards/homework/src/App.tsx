@@ -8,8 +8,7 @@ function App() {
   return (
     <div className="App">
       <Card
-        imgSrc={ someImage }
-        imgAlt="someImage"
+        src={ someImage }
         title="Card title"
         info="Some quick example text to build on the card title and make up the bulk of the card's content."
         buttonHref="#"
@@ -25,8 +24,7 @@ function App() {
         buttonHref="#"
         buttonTitle="Go somewhere"/>
       <Card
-        imgSrc={ someImage }
-        imgAlt="someImage"
+        src={ someImage }
         title="Card title"
         info="Some quick example text to build on the card title and make up the bulk of the card's content."
         buttonHref="#"

@@ -1,0 +1,47 @@
+.add-button {
+    border: 1px solid #000;
+    background-color: white;
+    width: 200px;
+    height: 50px;
+    font-size: 18px;
+    font-family: Arial, sans-serif;
+    border-radius: 5px;
+    padding: 10px;
+    text-align: center;
+    margin: auto 0 10px 0;
+}
+
+.close-button {
+    /* Размер кнопки */
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: white;
+    font-size: 24px;
+    font-weight: bold;
+    line-height: 40px;
+    text-align: center;
+    position: relative;
+    margin: -25px 0 0 170px;
+
+  }
+  
+  .close-button::before, .close-button::after {
+    /* Линии крестика */
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 20px;
+    height: 2px;
+    background-color: #000000;
+  }
+  
+  .close-button::before {
+    transform: translate(-50%, -50%) rotate(45deg);
+  }
+  
+  .close-button::after {
+    transform: translate(-50%, -50%) rotate(-45deg);
+  }

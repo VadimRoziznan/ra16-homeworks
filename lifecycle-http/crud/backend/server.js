@@ -17,8 +17,21 @@ app.use(function (req, res, next) {
   next();
 });
 
-const notes = [];
-let nextId = 1;
+const notes = [
+  {
+    "id": 0,
+    "content": "Первая заметка"
+  },
+  {
+    "id": 1,
+    "content": "Вторая заметка"
+  },
+  {
+    "id": 2,
+    "content": "Третья заметка"
+  },
+];
+let nextId = 3;
 
 app.get("/notes", (req, res) => {
   res.send(JSON.stringify(notes));

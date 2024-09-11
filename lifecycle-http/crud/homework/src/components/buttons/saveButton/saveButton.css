@@ -1,0 +1,34 @@
+.saveButton {
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  background-color: #fff;
+  border: 2px solid #000;
+  cursor: pointer;
+  padding: 5px;
+  margin-bottom: -40px;
+  margin-left: 10px;
+}
+
+.saveButton img {
+  width: 70%;
+  height: 70%;
+  object-fit: cover;
+}
+
+.saveButton:active img{
+  animation: rotate 0.75s;
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.saveButton:active {
+  box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5);
+}

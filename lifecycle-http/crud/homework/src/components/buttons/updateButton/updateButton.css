@@ -1,0 +1,32 @@
+.updateButton {
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  background-color: #fff;
+  border: 2px solid #000;
+  cursor: pointer;
+  padding: 5px;
+}
+
+.updateButton img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.updateButton:active img{
+  animation: rotate 0.75s;
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.updateButton:active {
+  box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5);
+}

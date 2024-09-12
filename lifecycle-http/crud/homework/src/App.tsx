@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./App.css";
 import { UpdateButton } from "./components/buttons/updateButton";
 import { DeleteButton } from "./components/buttons/deleteButton";
@@ -14,6 +14,10 @@ const App = () => {
   const saveButton = require("./assets/saveButton.png");
   const updateImage = require("./assets/updateImage.png");
   const deleteButton = require("./assets/deleteButton.png");
+
+  useEffect(() => {
+    handleUpdate(1000);
+  }, []);
 
   const handleUpdate = (delay: number) => {
     setLoading(true);

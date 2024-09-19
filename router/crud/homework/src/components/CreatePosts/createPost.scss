@@ -1,0 +1,80 @@
+.card-container {
+  position: relative;
+  display: flex;
+  width: 1000px;
+  height: auto;
+  flex-direction: column;
+  min-height: 200px;
+  margin: 10px auto;
+  padding: 15px;
+  background-color: rgb(253, 254, 255);
+  margin-top: 50px;
+
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  
+}
+
+.close-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 30px;
+  height: 30px;
+  background-color: transparent;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.close-button::before, .close-button::after {
+  content: "";
+  position: absolute;
+  width: 20px;
+  height: 2px;
+  background-color: #cfc4c4;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.close-button::before {
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.close-button::after {
+  transform: translate(-50%, -50%) rotate(-45deg);
+}
+
+.post-field {
+  width: 920px;
+  height: auto;
+  min-height: 150px;
+  margin: 35px auto auto auto;
+}
+
+.new-post {
+  display: flex;
+  flex-direction: column;
+}
+
+.publish-button-container {
+  width: auto;
+}
+
+.publish-button {
+  margin: 35px;
+  width: 150px;
+  height: 30px;
+  color: white;
+  background-color: #4469ae;
+  float: right;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+
+.publish-button:hover {
+  background-color: #2452a7;
+}

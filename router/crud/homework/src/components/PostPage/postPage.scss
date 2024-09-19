@@ -1,0 +1,40 @@
+.button-container {
+  width: auto;
+}
+
+.button {
+  margin: 35px;
+  width: 150px;
+  height: 30px;
+  color: white;
+  background-color: #4469ae;
+  float: right;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+
+.button:hover {
+  background-color: #2452a7;
+}
+
+.delete {
+  background-color: rgb(182, 27, 27);
+}
+
+.delete:hover {
+  background-color: #791111;
+}
+
+input {
+  width: 100%;
+  height: auto;
+  padding: 10px;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+  font-family: Arial, sans-serif;
+}

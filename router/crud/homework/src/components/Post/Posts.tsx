@@ -3,6 +3,7 @@ import { Card } from '../Card/Card';
 import { Link } from 'react-router-dom';
 import { usePostContext } from '../PostContext/PostContext';
 import "./post.scss"
+import apiService from '../../services/apiService';
 
 interface IPost {
   id: number;
@@ -21,8 +22,7 @@ export const Posts = () => {
   useEffect(() => {
     const fetchPosts = async () => {
       try {
-        const response = await fetch("http://localhost:7070/posts");
-        const data: IPost[] = await response.json();
+        const data = await apiService.getData();
         setPosts(data);
       } catch (error) {
         console.error(error);

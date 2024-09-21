@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { usePostContext } from '../PostContext/PostContext';
 import "../PostPage/postPage.scss"
+import apiService from '../../services/apiService';
 
 export const PostPage: React.FC = () => {
   const { id } = useParams();
@@ -22,15 +23,8 @@ export const PostPage: React.FC = () => {
 
   const handleDelete = async () => {
     try {
-      const response = await fetch(`http://localhost:7070/posts/${id}`, {
-        method: 'DELETE',
-      });
-
-      if (response.ok) {
-        navigate('/');
-      } else {
-        console.error('Ошибка при удалении поста');
-      }
+      await apiService.deleteData(id);
+      navigate('/');
     } catch (error) {
       console.error('Ошибка при удалении поста:', error);
     }
@@ -43,13 +37,8 @@ export const PostPage: React.FC = () => {
 
   const handleSave = async () => {
     try {
-      const response = await fetch(`http://localhost:7070/posts/${id}`, {
-        method: 'PUT',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ id: Number(id), content }),
-      });
-
-      if (response.ok) {
+      const response = await apiService.putData(id, { id: Number(id), content });
+      if (response) {
         setIsEditing(false);
         context.posts = context.posts.map((p) => (p.id === Number(id) ? { ...p, content } : p));
       } else {

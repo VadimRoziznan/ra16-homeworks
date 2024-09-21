@@ -35,8 +35,7 @@ app.get("/posts/:id", (req, res) => {
 
 app.post("/posts", (req, res) => {
   posts.push({ ...req.body, id: nextId++, created: Date.now() });
-  res.status(204);
-  res.end();
+  res.sendStatus(201);
 });
 
 app.put("/posts/:id", (req, res) => {
@@ -59,9 +58,10 @@ app.delete("/posts/:id", (req, res) => {
   const index = posts.findIndex((o) => o.id === postId);
   if (index !== -1) {
     posts.splice(index, 1);
+    res.sendStatus(204);
+    return;
   }
-  res.status(204);
-  res.end();
+  res.sendStatus(404);
 });
 
 const port = process.env.PORT || 7070;

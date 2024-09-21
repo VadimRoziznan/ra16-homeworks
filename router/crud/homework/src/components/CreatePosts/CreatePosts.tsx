@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import "../CreatePosts/createPost.scss"
+import "../CreatePosts/createPost.scss";
+import apiService from '../../services/apiService';
 
 export const CreatePosts = () => {
   const [content, setContent] = useState('');
@@ -8,15 +9,10 @@ export const CreatePosts = () => {
 
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-
+  
     try {
-      const response = await fetch('http://localhost:7070/posts', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ content }),
-      });
-
-      if (response.ok) {
+      const response = await apiService.postData({ content });
+      if (response) {
         navigate('/');
       } else {
         console.error('Ошибка при сохранении поста');

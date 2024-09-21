@@ -6,6 +6,10 @@
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
+    "axios": "^1.7.7",
+    "crypto-browserify": "^3.12.0",
+    "os-browserify": "^0.3.0",
+    "path-browserify": "^1.0.1",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-router-dom": "^6.26.2",
@@ -16,7 +20,7 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "react-scripts start --resolve.fallback.path=path-browserify --resolve.fallback.os=os-browserify/browser --resolve.fallback.crypto=crypto-browserify",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
@@ -43,5 +47,10 @@
     "eslint": "^8.57.1",
     "eslint-plugin-react": "^7.36.1",
     "file-loader": "^6.2.0"
+  },
+  "resolutions": {
+    "path": "path-browserify",
+    "os": "os-browserify/browser",
+    "crypto": "crypto-browserify"
   }
 }

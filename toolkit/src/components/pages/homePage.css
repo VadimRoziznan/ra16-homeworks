@@ -1,0 +1,19 @@
+.movie-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(500px, 1fr)); /* Автоматически заполняет пространство доступной ширины */
+  grid-gap: 5px; /* Расстояние между карточками */
+  width: 100%;
+  padding: 16px; /* Отступы вокруг списка */
+  box-sizing: border-box; /* Включает padding в общую ширину и высоту элемента */
+}
+
+.card-container {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  margin: 5px;
+  padding: 5px;
+  box-sizing: border-box;
+}

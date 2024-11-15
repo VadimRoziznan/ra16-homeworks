@@ -22,8 +22,8 @@ function HomePage() {
       } else {
         setPosts(data.Search || []);
       }
-    } catch (error) {
-      setError(error.message);
+    } catch (caughtError) {
+      setError(caughtError.message);
       setPosts([]);
     } finally {
       setIsLoading(false);
@@ -33,9 +33,9 @@ function HomePage() {
   return (
     <>
       <Search onSearch={handleSearch} />
-      {isLoading ? ( 
-        <LoadingSpinner /> 
-      ) : error ? ( 
+      {isLoading ? (
+        <LoadingSpinner />
+      ) : error ? (
         <p>
           Ошибка:
           {error}
@@ -43,6 +43,7 @@ function HomePage() {
       ) : (
         <div className="movie-list">
           {posts.map((item) => (
+            /* eslint-disable react/jsx-props-no-spreading */
             <div className="card-container" key={item.imdbID}><MovieCard {...item} /></div>
           ))}
         </div>

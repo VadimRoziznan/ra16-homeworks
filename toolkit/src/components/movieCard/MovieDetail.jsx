@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
+import { v4 as uuidv4 } from 'uuid';
 import apiService from '../services/apiService';
+import LoadingSpinner from '../loadingSpinner/LoadingSpinner';
 import './movieDetail.css';
 
 function MovieDetail() {
@@ -15,7 +17,6 @@ function MovieDetail() {
       setError(null);
       try {
         const data = await apiService.getDataById(imdbID);
-        console.log(data);
         if (data.Response !== 'False') {
           setMovie(data);
         } else {
@@ -33,7 +34,7 @@ function MovieDetail() {
   }, [imdbID]);
 
   if (loading) {
-    return <div>Loading...</div>;
+    return <div><LoadingSpinner /></div>;
   }
 
   if (error) {
@@ -45,7 +46,7 @@ function MovieDetail() {
   }
 
   const {
-    Actor, Awards, BoxOffice, Country, DVD, Director, Genre, Language, Metascore,
+    Actors, Awards, BoxOffice, Country, DVD, Director, Genre, Language, Metascore,
     Plot, Poster, Production, Rated, Ratings, Released, Response, Runtime, Title,
     Type, Website, Writer, Year, imdbRating, imdbVotes,
   } = movie;
@@ -55,60 +56,63 @@ function MovieDetail() {
       <h1>{Title}</h1>
       <img src={Poster} alt={Title} />
       <p>
-        Actor:
-        {Actor}
+        <b>Actor: </b>
+        {Actors}
       </p>
       <p>
-        Awards:
+        <b>Awards: </b>
         {Awards}
       </p>
       <p>
-        BoxOffice:
+        <b>BoxOffice: </b>
         {BoxOffice}
       </p>
       <p>
-        Country:
+        <b>Country: </b>
         {Country}
       </p>
       <p>
-        DVD:
+        <b>DVD: </b>
         {DVD}
       </p>
       <p>
-        Director:
+        <b>Director: </b>
         {Director}
       </p>
       <p>
-        Genre:
+        <b>Genre: </b>
         {Genre}
       </p>
       <p>
-        Language:
+        <b>Language: </b>
         {Language}
       </p>
       <p>
-        Metascore:
+        <b>Metascore: </b>
         {Metascore}
       </p>
       <p>
-        Plot:
+        <b>Plot: </b>
         {Plot}
       </p>
       <p>
-        Production:
+        <b>Production: </b>
         {Production}
       </p>
       <p>
-        Rated:
+        <b>Rated: </b>
         {Rated}
       </p>
       <p>
-        Ratings:
+        <b>Ratings: </b>
         {Ratings && Ratings.length > 0 ? (
           <ul>
-            {Ratings.map((rating, index) => (
-            /* eslint-disable react/jsx-props-no-spreading */
-              <li key={index}>{rating.Source}: {rating.Value}</li>
+            {Ratings.map((rating) => (
+              <li key={uuidv4()}>
+                {rating.Source}
+                :
+                {rating.Value}
+              </li>
             ))}
           </ul>
         ) : (
@@ -116,43 +120,43 @@ function MovieDetail() {
         )}
       </p>
       <p>
-        Released:
+        <b>Released: </b>
         {Released}
       </p>
       <p>
-        Response:
+        <b>Response: </b>
         {Response}
       </p>
       <p>
-        Runtime:
+        <b>Runtime: </b>
         {Runtime}
       </p>
       <p>
-        Title:
+        <b>Title: </b>
         {Title}
       </p>
       <p>
-        Type:
+        <b>Type: </b>
         {Type}
       </p>
       <p>
-        Website:
+        <b>Website: </b>
         {Website}
       </p>
       <p>
-        Writer:
+        <b>Writer: </b>
         {Writer}
       </p>
       <p>
-        Year:
+        <b>Year: </b>
         {Year}
       </p>
       <p>
-        imdbRating:
+        <b>imdbRating: </b>
         {imdbRating}
       </p>
       <p>
-        imdbVotes:
+        <b>imdbVotes: </b>
         {imdbVotes}
       </p>
     </div>

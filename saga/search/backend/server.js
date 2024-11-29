@@ -29,9 +29,7 @@ const skills = [
 
 let isEven = true;
 app.get("/api/search", async (req, res) => {
-  if (Math.random() > 0.75) {
-    return res.status(500).end();
-  }
+
   const { q } = req.query;
   return new Promise((resolve, reject) => {
     setTimeout(

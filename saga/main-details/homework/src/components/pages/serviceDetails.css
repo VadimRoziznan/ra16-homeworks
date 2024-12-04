@@ -1,0 +1,45 @@
+.service-details {
+  display: flex;
+  width: 500px;
+  height: auto;
+  flex-direction: column;
+  align-items: center;
+  margin: auto;
+  margin-top: 250px;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.service-name {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.service-price {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.service-content {
+  font-size: 16px;
+}
+
+.back-button {
+  width: 200px;
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.back-button:hover {
+  background-color: #0056b3;
+}

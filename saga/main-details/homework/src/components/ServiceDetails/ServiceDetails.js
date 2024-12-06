@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { fetchServiceDetails } from '../api';
+import { fetchServiceDetails } from '../../api';
 import { useParams, useNavigate } from 'react-router-dom';
 import LoadingSpinner from '../loadingSpinner/LoadingSpinner';
 import './serviceDetails.css';

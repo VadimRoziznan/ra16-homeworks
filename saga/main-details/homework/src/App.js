@@ -1,9 +1,9 @@
 import React from 'react';
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import Services from "./components/pages/Services";
-import ServiceDetails from "./components/pages/ServiceDetails";
+import Services from "./components/Services/Services";
+import ServiceDetails from "./components/ServiceDetails/ServiceDetails";
 import { Provider } from 'react-redux';
-import store from './components/store/store';
+import store from './components/redux/store';
 import './App.css';
 
 function App() {

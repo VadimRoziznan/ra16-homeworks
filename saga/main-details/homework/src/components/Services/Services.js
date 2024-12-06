@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { getServices } from './actions';
+import { fetchServicesRequest } from '../redux/actions';
 import Error from '../error/Error';
 import LoadingSpinner from '../loadingSpinner/LoadingSpinner';
 import { Link } from 'react-router-dom';
@@ -12,13 +12,14 @@ const Services = () => {
   const loading = useSelector((state) => state.services.isLoading);
   const error = useSelector((state) => state.services.error);
 
+  // При монтировании компонента отправляем экшен для запроса услуг
   useEffect(() => {
-    dispatch(getServices());
+    dispatch(fetchServicesRequest());
   }, [dispatch]);
 
   const handleRetry = () => {
-    dispatch(getServices());
-  }
+    dispatch(fetchServicesRequest());
+  };
 
   return (
     <div>
@@ -43,6 +44,6 @@ const Services = () => {
       )}
     </div>
   );
-}
+};
 
 export default Services;
